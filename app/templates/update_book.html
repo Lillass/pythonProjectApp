@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center">Редактирование книги</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="book_name" class="form-label">Название книги:</label>
+                            <input type="text" class="form-control" id="book_name" name="book_name" value="{{book.title}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Автор:</label>
+                            <input type="text" class="form-control" id="author" name="author" value="{{book.author}}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="year" class="form-label">Год издания:</label>
+                            <input type="text" class="form-control" id="year" name="year" value="{{book.year}}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Описание:</label>
+                            <textarea class="form-control" id="description" name="description" required>{{book.description}}</textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                            <a class="btn btn-danger" href="/books">Отменить</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
